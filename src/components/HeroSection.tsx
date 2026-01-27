@@ -19,64 +19,64 @@ const HeroSection = () => {
         <div className="absolute inset-0 bg-gradient-to-t from-warm-brown/60 via-transparent to-transparent"></div>
       </div>
 
-      <div className="container-restaurant relative z-10 px-4 md:px-8 py-32 md:py-40">
+      <div className="container-restaurant relative z-10 px-4 sm:px-6 md:px-8 py-24 sm:py-28 md:py-32 lg:py-40">
         <div className="max-w-2xl animate-fade-in">
           {/* Rating Badge */}
-          <div className="inline-flex items-center gap-3 bg-cream/10 backdrop-blur-md border border-cream/20 rounded-full px-5 py-2.5 mb-8 smooth-transition hover:bg-cream/15">
-            <div className="flex items-center gap-1.5">
-              <Star className="w-5 h-5 fill-gold text-gold" />
-              <span className="font-bold text-gold text-lg">4.5</span>
+          <div className="inline-flex items-center gap-2 sm:gap-3 bg-cream/10 backdrop-blur-md border border-cream/20 rounded-full px-3 sm:px-5 py-2 sm:py-2.5 mb-6 sm:mb-8 smooth-transition">
+            <div className="flex items-center gap-1 sm:gap-1.5">
+              <Star className="w-4 h-4 sm:w-5 sm:h-5 fill-gold text-gold" />
+              <span className="font-bold text-gold text-base sm:text-lg">4.5</span>
             </div>
-            <div className="w-px h-5 bg-cream/30" />
-            <span className="text-cream/90 font-medium">180+ Happy Customers</span>
+            <div className="w-px h-4 sm:h-5 bg-cream/30" />
+            <span className="text-cream/90 font-medium text-sm sm:text-base">180+ Happy Customers</span>
           </div>
 
           {/* Main Heading */}
-          <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-cream leading-[1.1] mb-6">
+          <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-cream leading-[1.15] mb-4 sm:mb-6">
             Pure Vegetarian Food,
-            <span className="block text-saffron-light mt-2">Made with Quality & Care</span>
+            <span className="block text-saffron-light mt-1 sm:mt-2">Made with Quality & Care</span>
           </h1>
 
           {/* Subheading */}
-          <p className="text-lg md:text-xl text-cream/85 mb-10 leading-relaxed max-w-xl">
+          <p className="text-base sm:text-lg md:text-xl text-cream/85 mb-6 sm:mb-8 md:mb-10 leading-relaxed max-w-xl">
             Experience authentic North Indian vegetarian cuisine in Vadodara. 
             Hygienic, delicious, and pocket-friendly meals for the whole family.
           </p>
 
           {/* Quick Info */}
-          <div className="flex flex-wrap gap-4 md:gap-6 mb-10">
-            <div className="flex items-center gap-2 text-cream/90 bg-cream/5 backdrop-blur-sm px-4 py-2 rounded-full">
-              <Clock className="w-5 h-5 text-saffron-light" />
+          <div className="flex flex-wrap gap-2 sm:gap-3 md:gap-4 lg:gap-6 mb-6 sm:mb-8 md:mb-10">
+            <div className="flex items-center gap-1.5 sm:gap-2 text-cream/90 bg-cream/5 backdrop-blur-sm px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-sm sm:text-base">
+              <Clock className="w-4 h-4 sm:w-5 sm:h-5 text-saffron-light flex-shrink-0" />
               <span className="font-medium">Opens at 11 AM</span>
             </div>
             <a 
               href="https://maps.app.goo.gl/pandeyji-restaurant-vadodara" 
               onClick={(e) => { e.preventDefault(); window.open("https://www.google.com/maps/search/?api=1&query=Pandeyji+Restaurant+GF-4+Dhanvantari+Complex+Sayajiganj+Vadodara", "_blank"); }}
-              className="flex items-center gap-2 text-cream/90 bg-cream/5 backdrop-blur-sm px-4 py-2 rounded-full cursor-pointer hover:bg-cream/15 smooth-transition"
+              className="flex items-center gap-1.5 sm:gap-2 text-cream/90 bg-cream/5 backdrop-blur-sm px-3 sm:px-4 py-1.5 sm:py-2 rounded-full cursor-pointer hover:bg-cream/15 smooth-transition text-sm sm:text-base"
             >
-              <MapPin className="w-5 h-5 text-saffron-light" />
+              <MapPin className="w-4 h-4 sm:w-5 sm:h-5 text-saffron-light flex-shrink-0" />
               <span className="font-medium">Sayajiganj, Vadodara</span>
             </a>
-            <div className="flex items-center gap-2 text-cream/90 bg-accent/20 backdrop-blur-sm px-4 py-2 rounded-full">
+            <div className="flex items-center gap-2 text-cream/90 bg-accent/20 backdrop-blur-sm px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-sm sm:text-base">
               <span className="font-semibold">₹200–400 per person</span>
             </div>
           </div>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
             <Button
               size="lg"
               onClick={() => window.open(ZOMATO_URL, "_blank")}
-              className="bg-primary hover:bg-saffron-dark text-primary-foreground font-bold text-lg px-10 py-6 shadow-elevated smooth-transition btn-shine"
+              className="bg-primary hover:bg-saffron-dark text-primary-foreground font-bold text-base sm:text-lg px-6 sm:px-10 py-5 sm:py-6 shadow-elevated smooth-transition btn-shine w-full sm:w-auto"
             >
               Order Online
             </Button>
             <Button
               size="lg"
               onClick={() => window.open(`tel:${PHONE_NUMBER}`)}
-              className="bg-primary/20 backdrop-blur-sm border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground font-bold text-lg px-10 py-6 smooth-transition"
+              className="bg-primary/20 backdrop-blur-sm border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground font-bold text-base sm:text-lg px-6 sm:px-10 py-5 sm:py-6 smooth-transition w-full sm:w-auto"
             >
-              <Phone className="w-5 h-5 mr-2" />
+              <Phone className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
               Call Now
             </Button>
           </div>

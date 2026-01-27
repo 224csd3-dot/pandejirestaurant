@@ -123,15 +123,39 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
+    /* Prevent horizontal scroll */
+    overflow-x: hidden;
   }
 
   body {
     @apply bg-background text-foreground font-sans antialiased;
     font-family: 'Source Sans 3', sans-serif;
+    /* Prevent horizontal scroll */
+    overflow-x: hidden;
+    /* Responsive base font size */
+    font-size: 16px;
+    line-height: 1.6;
   }
 
+  /* Responsive typography scaling */
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Playfair Display', serif;
+    line-height: 1.2;
+  }
+
+  /* Tap target sizes for mobile - minimum 44px */
+  button, a, [role="button"] {
+    min-height: 44px;
+  }
+
+  /* Prevent text zoom on iOS */
+  input, select, textarea {
+    font-size: 16px;
+  }
+
+  /* Better touch scrolling */
+  .overflow-x-auto, .overflow-y-auto {
+    -webkit-overflow-scrolling: touch;
   }
 }
 
@@ -140,12 +164,14 @@
     @apply bg-gradient-to-r from-primary to-saffron-light bg-clip-text text-transparent;
   }
 
+  /* Mobile-first responsive section padding */
   .section-padding {
-    @apply py-20 md:py-28 px-4 md:px-8;
+    @apply py-12 px-4 sm:py-16 sm:px-6 md:py-20 md:px-8 lg:py-28;
   }
 
+  /* Responsive container with proper edge padding */
   .container-restaurant {
-    @apply max-w-7xl mx-auto;
+    @apply max-w-7xl mx-auto w-full;
   }
 
   /* Smooth GPU-accelerated transitions for 120hz */
@@ -166,27 +192,31 @@
     transform: scale(1.02) translateZ(0);
   }
 
-  /* Card hover effect */
+  /* Card hover effect - disabled on touch devices */
   .card-hover {
     @apply transition-all duration-300 ease-out;
     will-change: transform, box-shadow;
     backface-visibility: hidden;
   }
 
-  .card-hover:hover {
-    transform: translateY(-4px) translateZ(0);
-    @apply shadow-card;
+  @media (hover: hover) and (pointer: fine) {
+    .card-hover:hover {
+      transform: translateY(-4px) translateZ(0);
+      @apply shadow-card;
+    }
   }
 
-  /* Image hover effect */
+  /* Image hover effect - disabled on touch devices */
   .image-hover {
     @apply transition-transform duration-500 ease-out;
     will-change: transform;
     backface-visibility: hidden;
   }
 
-  .image-hover:hover {
-    transform: scale(1.05) translateZ(0);
+  @media (hover: hover) and (pointer: fine) {
+    .image-hover:hover {
+      transform: scale(1.05) translateZ(0);
+    }
   }
 
   /* Button shine effect */
