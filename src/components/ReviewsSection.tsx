@@ -38,66 +38,66 @@ const reviewTags = [
 
 const ReviewsSection = () => {
   return (
-    <section id="reviews" className="section-padding bg-background">
+    <section id="reviews" className="section-padding bg-gradient-to-b from-secondary to-background">
       <div className="container-restaurant px-4">
         {/* Header with Rating */}
-        <div className="text-center mb-12">
-          <span className="inline-block text-primary font-medium text-sm uppercase tracking-wider mb-2">
+        <div className="text-center mb-16">
+          <span className="inline-block text-primary font-semibold text-sm uppercase tracking-widest mb-3">
             Customer Reviews
           </span>
-          <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-6">
+          <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-8">
             What Our Customers Say
           </h2>
           
           {/* Rating Display */}
-          <div className="inline-flex flex-col items-center bg-secondary rounded-2xl px-8 py-6 shadow-soft">
-            <div className="flex items-center gap-2 mb-2">
-              <span className="font-serif text-5xl font-bold text-foreground">4.5</span>
-              <Star className="w-10 h-10 fill-gold text-gold" />
+          <div className="inline-flex flex-col items-center bg-card rounded-3xl px-10 py-8 shadow-card border border-border/50">
+            <div className="flex items-center gap-3 mb-3">
+              <span className="font-serif text-6xl font-bold text-foreground">4.5</span>
+              <Star className="w-12 h-12 fill-gold text-gold" />
             </div>
-            <div className="flex gap-1 mb-2">
+            <div className="flex gap-1.5 mb-3">
               {[1, 2, 3, 4, 5].map((star) => (
                 <Star
                   key={star}
-                  className={`w-5 h-5 ${
+                  className={`w-6 h-6 ${
                     star <= 4 ? "fill-gold text-gold" : "fill-gold/50 text-gold/50"
                   }`}
                 />
               ))}
             </div>
-            <p className="text-muted-foreground">Based on <strong className="text-foreground">180+</strong> reviews</p>
+            <p className="text-muted-foreground text-lg">Based on <strong className="text-foreground">180+</strong> reviews</p>
           </div>
         </div>
 
         {/* Review Tags */}
-        <div className="flex flex-wrap justify-center gap-3 mb-12">
+        <div className="flex flex-wrap justify-center gap-3 mb-14">
           {reviewTags.map((tag, index) => (
             <span
               key={index}
-              className="bg-card border border-border rounded-full px-4 py-2 text-sm shadow-soft"
+              className="bg-card border border-border/50 rounded-full px-5 py-2.5 shadow-soft smooth-transition hover:shadow-card hover:border-primary/30"
             >
-              <span className="text-foreground font-medium">{tag.label}</span>
+              <span className="text-foreground font-semibold">{tag.label}</span>
               <span className="text-muted-foreground ml-2">({tag.count})</span>
             </span>
           ))}
         </div>
 
         {/* Reviews Grid */}
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid md:grid-cols-2 gap-6 md:gap-8">
           {reviews.map((review, index) => (
             <div
               key={index}
-              className="bg-card rounded-xl p-6 shadow-soft border border-border relative"
+              className="group bg-card rounded-2xl p-8 card-hover border border-border/50 relative gpu-accelerated"
             >
-              <Quote className="absolute top-4 right-4 w-8 h-8 text-primary/20" />
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                  <span className="font-serif text-xl font-bold text-primary">
+              <Quote className="absolute top-6 right-6 w-10 h-10 text-primary/15 group-hover:text-primary/25 transition-colors duration-300" />
+              <div className="flex items-center gap-4 mb-5">
+                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-primary/20 to-saffron-light/10 flex items-center justify-center">
+                  <span className="font-serif text-2xl font-bold text-primary">
                     {review.name.charAt(0)}
                   </span>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-foreground">{review.name}</h4>
+                  <h4 className="font-bold text-foreground text-lg">{review.name}</h4>
                   <div className="flex gap-0.5">
                     {[1, 2, 3, 4, 5].map((star) => (
                       <Star
@@ -112,14 +112,14 @@ const ReviewsSection = () => {
                   </div>
                 </div>
               </div>
-              <p className="text-muted-foreground leading-relaxed mb-4">
+              <p className="text-muted-foreground leading-relaxed mb-5 text-base">
                 "{review.text}"
               </p>
               <div className="flex flex-wrap gap-2">
                 {review.tags.map((tag, tagIndex) => (
                   <span
                     key={tagIndex}
-                    className="bg-accent/10 text-accent text-xs font-medium px-3 py-1 rounded-full"
+                    className="bg-accent/10 text-accent text-xs font-bold px-4 py-1.5 rounded-full"
                   >
                     {tag}
                   </span>

@@ -16,13 +16,13 @@ const galleryImages = [
 
 const GallerySection = () => {
   return (
-    <section id="gallery" className="section-padding bg-secondary">
+    <section id="gallery" className="section-padding bg-gradient-to-b from-background to-secondary">
       <div className="container-restaurant px-4">
-        <div className="text-center mb-12">
-          <span className="inline-block text-primary font-medium text-sm uppercase tracking-wider mb-2">
+        <div className="text-center mb-16">
+          <span className="inline-block text-primary font-semibold text-sm uppercase tracking-widest mb-3">
             Gallery
           </span>
-          <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-4">
+          <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-5">
             A Glimpse of Pandeyji
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
@@ -31,24 +31,24 @@ const GallerySection = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
           {galleryImages.map((image, index) => (
             <div
               key={index}
-              className={`relative group overflow-hidden rounded-xl shadow-soft ${
+              className={`relative group overflow-hidden rounded-2xl shadow-soft gpu-accelerated ${
                 index === 0 ? "col-span-2 row-span-2" : ""
               }`}
             >
               <img
                 src={image.src}
                 alt={image.alt}
-                className={`w-full object-cover group-hover:scale-105 transition-transform duration-500 ${
-                  index === 0 ? "h-[300px] md:h-[400px]" : "h-48 md:h-56"
+                className={`w-full object-cover image-hover ${
+                  index === 0 ? "h-[320px] md:h-[450px]" : "h-52 md:h-64"
                 }`}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-warm-brown/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <div className="absolute bottom-4 left-4">
-                  <span className="bg-primary text-primary-foreground text-sm font-medium px-3 py-1 rounded-full">
+              <div className="absolute inset-0 bg-gradient-to-t from-warm-brown/70 via-warm-brown/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500">
+                <div className="absolute bottom-5 left-5">
+                  <span className="bg-primary text-primary-foreground text-sm font-bold px-5 py-2 rounded-full shadow-lg">
                     {image.category}
                   </span>
                 </div>

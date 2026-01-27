@@ -1,4 +1,8 @@
 import { Facebook, Phone, MapPin, Leaf } from "lucide-react";
+import { Button } from "@/components/ui/button";
+
+const ZOMATO_URL = "https://www.zomato.com/vadodara/pandeyji-restaurant-sayajigunj";
+const PHONE_NUMBER = "+919998006840";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -28,34 +32,68 @@ const Footer = () => {
 
   return (
     <footer className="bg-warm-brown text-cream">
+      {/* CTA Banner */}
+      <div className="bg-gradient-to-r from-primary to-saffron-dark py-10">
+        <div className="container-restaurant px-4">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+            <div>
+              <h3 className="font-serif text-2xl md:text-3xl font-bold text-primary-foreground mb-2">
+                Ready to Order?
+              </h3>
+              <p className="text-primary-foreground/85">
+                Call us or order online for authentic vegetarian delights!
+              </p>
+            </div>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Button
+                size="lg"
+                onClick={() => window.open(`tel:${PHONE_NUMBER}`)}
+                className="bg-primary-foreground text-primary hover:bg-primary-foreground/90 font-bold smooth-transition"
+              >
+                <Phone className="w-5 h-5 mr-2" />
+                Call Now
+              </Button>
+              <Button
+                size="lg"
+                variant="outline"
+                onClick={() => window.open(ZOMATO_URL, "_blank")}
+                className="border-2 border-primary-foreground text-primary-foreground hover:bg-primary-foreground/10 font-bold smooth-transition"
+              >
+                Order Online
+              </Button>
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* Main Footer */}
       <div className="container-restaurant px-4 py-16">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand */}
           <div className="lg:col-span-1">
             <div className="mb-6">
-              <h3 className="font-serif text-2xl font-bold text-cream">PANDEYJI</h3>
-              <p className="text-saffron-light text-sm tracking-widest">RESTAURANT</p>
+              <h3 className="font-serif text-3xl font-bold text-cream">PANDEYJI</h3>
+              <p className="text-saffron-light text-sm tracking-widest font-medium">RESTAURANT</p>
             </div>
             <p className="text-cream/70 leading-relaxed mb-6">
               Vadodara's trusted destination for authentic North Indian 
               vegetarian cuisine. Quality, hygiene, and taste since years.
             </p>
-            <div className="flex items-center gap-2 text-saffron-light">
+            <div className="flex items-center gap-3 text-saffron-light bg-saffron-light/10 px-4 py-2 rounded-full inline-flex">
               <Leaf className="w-5 h-5" />
-              <span className="font-medium">100% Pure Vegetarian</span>
+              <span className="font-bold">100% Pure Vegetarian</span>
             </div>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-serif text-lg font-semibold mb-6 text-cream">Quick Links</h4>
-            <ul className="space-y-3">
+            <h4 className="font-serif text-xl font-bold mb-6 text-cream">Quick Links</h4>
+            <ul className="space-y-4">
               {quickLinks.map((link) => (
                 <li key={link.name}>
                   <button
                     onClick={() => scrollToSection(link.href)}
-                    className="text-cream/70 hover:text-saffron-light transition-colors"
+                    className="text-cream/70 hover:text-saffron-light transition-colors duration-300 font-medium"
                   >
                     {link.name}
                   </button>
@@ -66,10 +104,10 @@ const Footer = () => {
 
           {/* Services */}
           <div>
-            <h4 className="font-serif text-lg font-semibold mb-6 text-cream">Our Services</h4>
-            <ul className="space-y-3">
+            <h4 className="font-serif text-xl font-bold mb-6 text-cream">Our Services</h4>
+            <ul className="space-y-4">
               {services.map((service) => (
-                <li key={service} className="text-cream/70">
+                <li key={service} className="text-cream/70 font-medium">
                   {service}
                 </li>
               ))}
@@ -78,31 +116,31 @@ const Footer = () => {
 
           {/* Contact */}
           <div>
-            <h4 className="font-serif text-lg font-semibold mb-6 text-cream">Contact Info</h4>
-            <div className="space-y-4">
-              <div className="flex items-start gap-3">
-                <Phone className="w-5 h-5 text-saffron-light mt-0.5" />
+            <h4 className="font-serif text-xl font-bold mb-6 text-cream">Contact Info</h4>
+            <div className="space-y-5">
+              <div className="flex items-start gap-4">
+                <Phone className="w-5 h-5 text-saffron-light mt-1" />
                 <div>
-                  <p className="text-cream/70 text-sm">Call us at</p>
+                  <p className="text-cream/60 text-sm mb-1">Call us at</p>
                   <a
-                    href="tel:+919998006840"
-                    className="text-cream hover:text-saffron-light transition-colors font-medium"
+                    href={`tel:${PHONE_NUMBER}`}
+                    className="text-cream hover:text-saffron-light transition-colors duration-300 font-bold text-lg"
                   >
                     +91 99980 06840
                   </a>
                 </div>
               </div>
-              <div className="flex items-start gap-3">
-                <MapPin className="w-5 h-5 text-saffron-light mt-0.5" />
+              <div className="flex items-start gap-4">
+                <MapPin className="w-5 h-5 text-saffron-light mt-1" />
                 <div>
-                  <p className="text-cream/70 text-sm">Location</p>
-                  <p className="text-cream">Sayajiganj, Vadodara</p>
+                  <p className="text-cream/60 text-sm mb-1">Location</p>
+                  <p className="text-cream font-medium">Sayajiganj, Vadodara</p>
                 </div>
               </div>
               <div className="pt-4">
                 <a
                   href="#"
-                  className="inline-flex items-center gap-2 bg-cream/10 hover:bg-cream/20 transition-colors px-4 py-2 rounded-lg"
+                  className="inline-flex items-center gap-3 bg-cream/10 hover:bg-cream/20 transition-colors duration-300 px-5 py-3 rounded-xl font-medium"
                 >
                   <Facebook className="w-5 h-5" />
                   <span>Follow on Facebook</span>
@@ -118,7 +156,7 @@ const Footer = () => {
         <div className="container-restaurant px-4 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-cream/60">
             <p>© {currentYear} Pandeyji Restaurant. All rights reserved.</p>
-            <p>Pure Vegetarian • Hygienic • Quality Food</p>
+            <p className="font-medium">Pure Vegetarian • Hygienic • Quality Food</p>
           </div>
         </div>
       </div>
