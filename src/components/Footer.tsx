@@ -4,6 +4,7 @@ import OrderDialog from "@/components/OrderDialog";
 
 const PHONE_NUMBER = "+919998006840";
 const GOOGLE_MAPS_URL = "https://www.google.com/maps/search/?api=1&query=Pandeyji+Restaurant+GF-4+Dhanvantari+Complex+Sayajiganj+Vadodara";
+const FACEBOOK_URL = "https://www.facebook.com/profile.php?id=100093194160367&mibextid=LQQJ4d";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -144,7 +145,9 @@ const Footer = () => {
               </a>
               <div className="pt-4">
                 <a
-                  href="#"
+                  href={FACEBOOK_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center gap-3 bg-cream/10 hover:bg-cream/20 transition-colors duration-300 px-5 py-3 rounded-xl font-medium"
                 >
                   <Facebook className="w-5 h-5" />

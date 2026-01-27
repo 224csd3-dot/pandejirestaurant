@@ -4,6 +4,7 @@ import OrderDialog from "@/components/OrderDialog";
 
 const PHONE_NUMBER = "+919998006840";
 const GOOGLE_MAPS_URL = "https://www.google.com/maps/search/?api=1&query=Pandeyji+Restaurant+Sayajiganj+Vadodara";
+const FACEBOOK_URL = "https://www.facebook.com/profile.php?id=100093194160367&mibextid=LQQJ4d";
 
 const services = [
   { icon: UtensilsCrossed, label: "Dine-in" },
@@ -85,13 +86,18 @@ const ContactSection = () => {
                 <h4 className="font-bold text-foreground text-lg mb-2">Opening Hours</h4>
                 <p className="text-muted-foreground">Opens daily at 11 AM</p>
               </div>
-              <div className="bg-card rounded-2xl p-7 shadow-soft border border-border/50 card-hover">
+              <a 
+                href={FACEBOOK_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-card rounded-2xl p-7 shadow-soft border border-border/50 card-hover block"
+              >
                 <div className="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center mb-5">
                   <Facebook className="w-7 h-7 text-primary" />
                 </div>
                 <h4 className="font-bold text-foreground text-lg mb-2">Follow Us</h4>
-                <a href="#" className="text-primary hover:underline font-medium">Facebook Page</a>
-              </div>
+                <span className="text-primary hover:underline font-medium">Facebook Page</span>
+              </a>
             </div>
 
             {/* Services */}
