@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom";
 import { Phone, ArrowRight, Utensils } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import OrderDialog from "@/components/OrderDialog";
 import paneerDish from "@/assets/paneer-dish.jpg";
 import paneerAngara from "@/assets/paneer-angara.jpg";
 import paratha from "@/assets/paratha.jpg";
 import thali from "@/assets/thali.jpg";
 
-const ZOMATO_URL = "https://www.zomato.com/vadodara/pandeyji-restaurant-sayajigunj";
 const PHONE_NUMBER = "+919998006840";
 
 const popularDishes = [
@@ -127,14 +127,15 @@ const MenuTeaser = () => {
                 <Phone className="w-5 h-5 mr-2" />
                 Call to Order
               </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                onClick={() => window.open(ZOMATO_URL, "_blank")}
-                className="border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground font-bold px-8 smooth-transition"
-              >
-                Order on Zomato
-              </Button>
+              <OrderDialog>
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground font-bold px-8 smooth-transition"
+                >
+                  Order Online
+                </Button>
+              </OrderDialog>
             </div>
           </div>
         </div>

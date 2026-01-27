@@ -1,8 +1,8 @@
 import { Star, Phone, Clock, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/hero-food.jpg";
+import OrderDialog from "@/components/OrderDialog";
 
-const ZOMATO_URL = "https://www.zomato.com/vadodara/pandeyji-restaurant-sayajigunj";
 const PHONE_NUMBER = "+919998006840";
 
 const HeroSection = () => {
@@ -64,17 +64,18 @@ const HeroSection = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4">
-            <Button
-              size="lg"
-              onClick={() => window.open(ZOMATO_URL, "_blank")}
-              className="bg-primary hover:bg-saffron-dark text-primary-foreground font-bold text-lg px-10 py-6 shadow-elevated smooth-transition btn-shine"
-            >
-              Order Online
-            </Button>
+            <OrderDialog>
+              <Button
+                size="lg"
+                className="bg-primary hover:bg-saffron-dark text-primary-foreground font-bold text-lg px-10 py-6 shadow-elevated smooth-transition btn-shine"
+              >
+                Order Online
+              </Button>
+            </OrderDialog>
             <Button
               size="lg"
               onClick={() => window.open(`tel:${PHONE_NUMBER}`)}
-              className="bg-primary/20 border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground font-bold text-lg px-10 py-6 smooth-transition backdrop-blur-sm"
+              className="bg-primary/20 backdrop-blur-sm border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground font-bold text-lg px-10 py-6 smooth-transition"
             >
               <Phone className="w-5 h-5 mr-2" />
               Call Now
