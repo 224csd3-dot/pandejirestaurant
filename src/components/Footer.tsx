@@ -89,7 +89,7 @@ const Footer = () => {
           {/* Quick Links */}
           <div>
             <h4 className="font-serif text-lg sm:text-xl font-bold mb-4 sm:mb-6 text-cream">Quick Links</h4>
-            <ul className="space-y-2 sm:space-y-3 md:space-y-4">
+            <ul className="space-y-2 sm:space-y-2.5">
               {quickLinks.map((link) => (
                 <li key={link.name}>
                   <button
@@ -106,7 +106,7 @@ const Footer = () => {
           {/* Services */}
           <div>
             <h4 className="font-serif text-lg sm:text-xl font-bold mb-4 sm:mb-6 text-cream">Our Services</h4>
-            <ul className="space-y-2 sm:space-y-3 md:space-y-4">
+            <ul className="space-y-2 sm:space-y-2.5">
               {services.map((service) => (
                 <li key={service} className="text-cream/70 font-medium text-sm sm:text-base">
                   {service}
