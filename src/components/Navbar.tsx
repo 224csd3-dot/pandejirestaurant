@@ -44,15 +44,15 @@ const Navbar = () => {
     >
       <div className="container-restaurant">
         {/* Main navbar */}
-        <div className="flex items-center justify-between py-4 px-4 md:px-8">
+        <div className="flex items-center justify-between py-3 sm:py-4 px-4 sm:px-6 md:px-8">
           {/* Logo */}
           <a href="#home" onClick={() => scrollToSection("#home")} className="flex flex-col group">
-            <span className={`font-serif text-2xl md:text-3xl font-bold transition-colors duration-300 ${
+            <span className={`font-serif text-xl sm:text-2xl md:text-3xl font-bold transition-colors duration-300 ${
               scrolled ? "text-foreground" : "text-cream"
             }`}>
               PANDEYJI
             </span>
-            <span className="text-xs md:text-sm text-primary font-medium tracking-widest">
+            <span className="text-[10px] sm:text-xs md:text-sm text-primary font-medium tracking-widest">
               RESTAURANT
             </span>
           </a>
@@ -106,15 +106,15 @@ const Navbar = () => {
       {/* Mobile menu */}
       <div 
         className={`lg:hidden bg-card/98 backdrop-blur-md border-t border-border overflow-hidden transition-all duration-300 ease-out ${
-          isOpen ? "max-h-[400px] opacity-100" : "max-h-0 opacity-0"
+          isOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
         }`}
       >
-        <div className="container-restaurant py-4 px-4 space-y-2">
+        <div className="container-restaurant py-3 sm:py-4 px-4 sm:px-6 space-y-1 sm:space-y-2">
           {navLinks.map((link) => (
             <button
               key={link.name}
               onClick={() => scrollToSection(link.href)}
-              className="block w-full text-left py-3 px-4 text-foreground/80 hover:text-primary hover:bg-primary/5 rounded-lg transition-all duration-200 font-medium"
+              className="block w-full text-left py-3 sm:py-3.5 px-4 text-foreground/80 hover:text-primary hover:bg-primary/5 rounded-lg transition-all duration-200 font-medium text-base sm:text-lg active:bg-primary/10"
             >
               {link.name}
             </button>
@@ -122,15 +122,17 @@ const Navbar = () => {
           <div className="flex flex-col gap-3 pt-4 border-t border-border">
             <Button
               variant="outline"
-              onClick={() => window.open(`tel:${PHONE_NUMBER}`)}
-              className="border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground w-full font-semibold"
+              size="lg"
+              onClick={() => { window.open(`tel:${PHONE_NUMBER}`); setIsOpen(false); }}
+              className="border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground w-full font-semibold py-4"
             >
               <Phone className="w-4 h-4 mr-2" />
               Call Now
             </Button>
             <Button 
-              onClick={() => window.open(ZOMATO_URL, "_blank")}
-              className="bg-primary text-primary-foreground hover:bg-saffron-dark w-full font-semibold"
+              size="lg"
+              onClick={() => { window.open(ZOMATO_URL, "_blank"); setIsOpen(false); }}
+              className="bg-primary text-primary-foreground hover:bg-saffron-dark w-full font-semibold py-4"
             >
               Order Online
             </Button>
