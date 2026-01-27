@@ -1,10 +1,10 @@
 import { Phone, MapPin, Clock, Car, Truck, UtensilsCrossed, Facebook, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import OrderDialog from "@/components/OrderDialog";
 
 const PHONE_NUMBER = "+919998006840";
 const GOOGLE_MAPS_URL = "https://www.google.com/maps/search/?api=1&query=Pandeyji+Restaurant+Sayajiganj+Vadodara";
 const FACEBOOK_URL = "https://www.facebook.com/profile.php?id=100093194160367&mibextid=LQQJ4d";
+const ZOMATO_URL = "https://www.zomato.com/vadodara/pandeyji-restaurant-sayajigunj";
 
 const services = [
   { icon: UtensilsCrossed, label: "Dine-in" },
@@ -65,14 +65,13 @@ const ContactSection = () => {
                     <Phone className="w-5 h-5 mr-2" />
                     Call Now
                   </Button>
-                  <OrderDialog>
-                    <Button
-                      size="lg"
-                      className="flex-1 bg-primary-foreground/20 backdrop-blur-sm border-2 border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/30 font-bold smooth-transition"
-                    >
-                      Order Online
-                    </Button>
-                  </OrderDialog>
+                  <Button
+                    size="lg"
+                    onClick={() => window.open(ZOMATO_URL, "_blank")}
+                    className="flex-1 bg-primary-foreground/20 backdrop-blur-sm border-2 border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/30 font-bold smooth-transition"
+                  >
+                    Order Online
+                  </Button>
                 </div>
               </div>
             </div>

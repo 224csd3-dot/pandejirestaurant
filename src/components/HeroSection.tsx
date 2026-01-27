@@ -1,9 +1,9 @@
 import { Star, Phone, Clock, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/hero-food.jpg";
-import OrderDialog from "@/components/OrderDialog";
 
 const PHONE_NUMBER = "+919998006840";
+const ZOMATO_URL = "https://www.zomato.com/vadodara/pandeyji-restaurant-sayajigunj";
 
 const HeroSection = () => {
   return (
@@ -64,14 +64,13 @@ const HeroSection = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4">
-            <OrderDialog>
-              <Button
-                size="lg"
-                className="bg-primary hover:bg-saffron-dark text-primary-foreground font-bold text-lg px-10 py-6 shadow-elevated smooth-transition btn-shine"
-              >
-                Order Online
-              </Button>
-            </OrderDialog>
+            <Button
+              size="lg"
+              onClick={() => window.open(ZOMATO_URL, "_blank")}
+              className="bg-primary hover:bg-saffron-dark text-primary-foreground font-bold text-lg px-10 py-6 shadow-elevated smooth-transition btn-shine"
+            >
+              Order Online
+            </Button>
             <Button
               size="lg"
               onClick={() => window.open(`tel:${PHONE_NUMBER}`)}
