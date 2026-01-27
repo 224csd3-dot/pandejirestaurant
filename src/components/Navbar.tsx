@@ -79,11 +79,7 @@ const Navbar = () => {
               variant="outline"
               size="sm"
               onClick={() => window.open(`tel:${PHONE_NUMBER}`)}
-              className={`border-2 font-semibold smooth-transition btn-shine ${
-                scrolled 
-                  ? "border-primary text-primary hover:bg-primary hover:text-primary-foreground" 
-                  : "border-cream/60 text-cream hover:bg-cream/10"
-              }`}
+              className="border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground font-semibold smooth-transition btn-shine"
             >
               <Phone className="w-4 h-4 mr-2" />
               Call Now
