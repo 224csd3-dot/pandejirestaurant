@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 
 const ZOMATO_URL = "https://www.zomato.com/vadodara/pandeyji-restaurant-sayajigunj";
 const PHONE_NUMBER = "+919998006840";
+const GOOGLE_MAPS_URL = "https://www.google.com/maps/search/?api=1&query=Pandeyji+Restaurant+GF-4+Dhanvantari+Complex+Sayajiganj+Vadodara";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -130,13 +131,17 @@ const Footer = () => {
                   </a>
                 </div>
               </div>
-              <div className="flex items-start gap-4">
+              <a 
+                href="#"
+                onClick={(e) => { e.preventDefault(); window.open(GOOGLE_MAPS_URL, "_blank"); }}
+                className="flex items-start gap-4 group cursor-pointer"
+              >
                 <MapPin className="w-5 h-5 text-saffron-light mt-1" />
                 <div>
                   <p className="text-cream/60 text-sm mb-1">Location</p>
-                  <p className="text-cream font-medium">Sayajiganj, Vadodara</p>
+                  <p className="text-cream font-medium group-hover:text-saffron-light transition-colors duration-300">Sayajiganj, Vadodara</p>
                 </div>
-              </div>
+              </a>
               <div className="pt-4">
                 <a
                   href="#"

@@ -49,10 +49,14 @@ const HeroSection = () => {
               <Clock className="w-5 h-5 text-saffron-light" />
               <span className="font-medium">Opens at 11 AM</span>
             </div>
-            <div className="flex items-center gap-2 text-cream/90 bg-cream/5 backdrop-blur-sm px-4 py-2 rounded-full">
+            <a 
+              href="https://maps.app.goo.gl/pandeyji-restaurant-vadodara" 
+              onClick={(e) => { e.preventDefault(); window.open("https://www.google.com/maps/search/?api=1&query=Pandeyji+Restaurant+GF-4+Dhanvantari+Complex+Sayajiganj+Vadodara", "_blank"); }}
+              className="flex items-center gap-2 text-cream/90 bg-cream/5 backdrop-blur-sm px-4 py-2 rounded-full cursor-pointer hover:bg-cream/15 smooth-transition"
+            >
               <MapPin className="w-5 h-5 text-saffron-light" />
               <span className="font-medium">Sayajiganj, Vadodara</span>
-            </div>
+            </a>
             <div className="flex items-center gap-2 text-cream/90 bg-accent/20 backdrop-blur-sm px-4 py-2 rounded-full">
               <span className="font-semibold">₹200–400 per person</span>
             </div>
