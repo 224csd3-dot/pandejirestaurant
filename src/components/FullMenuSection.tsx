@@ -5,8 +5,8 @@ import { Input } from "@/components/ui/input";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import { menuCategories, type MenuCategory, type MenuItem } from "@/data/menuData";
 import { cn } from "@/lib/utils";
+import OrderDialog from "@/components/OrderDialog";
 
-const ZOMATO_URL = "https://www.zomato.com/vadodara/pandeyji-restaurant-sayajigunj";
 const PHONE_NUMBER = "+919998006840";
 
 const MenuItemCard = ({ item }: { item: MenuItem }) => (
@@ -213,14 +213,15 @@ const FullMenuSection = () => {
                 <Phone className="w-5 h-5 mr-2" />
                 Call to Order
               </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                onClick={() => window.open(ZOMATO_URL, "_blank")}
-                className="border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground font-bold px-8 smooth-transition"
-              >
-                Order on Zomato
-              </Button>
+              <OrderDialog>
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground font-bold px-8 smooth-transition"
+                >
+                  Order Online
+                </Button>
+              </OrderDialog>
             </div>
           </div>
         </div>

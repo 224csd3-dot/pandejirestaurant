@@ -1,7 +1,7 @@
 import { Facebook, Phone, MapPin, Leaf } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import OrderDialog from "@/components/OrderDialog";
 
-const ZOMATO_URL = "https://www.zomato.com/vadodara/pandeyji-restaurant-sayajigunj";
 const PHONE_NUMBER = "+919998006840";
 const GOOGLE_MAPS_URL = "https://www.google.com/maps/search/?api=1&query=Pandeyji+Restaurant+GF-4+Dhanvantari+Complex+Sayajiganj+Vadodara";
 
@@ -49,19 +49,19 @@ const Footer = () => {
               <Button
                 size="lg"
                 onClick={() => window.open(`tel:${PHONE_NUMBER}`)}
-                className="bg-primary-foreground text-primary hover:bg-primary-foreground/90 font-bold smooth-transition"
+                className="bg-primary-foreground/20 backdrop-blur-sm border-2 border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/30 font-bold smooth-transition"
               >
                 <Phone className="w-5 h-5 mr-2" />
                 Call Now
               </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                onClick={() => window.open(ZOMATO_URL, "_blank")}
-                className="border-2 border-primary-foreground text-primary-foreground hover:bg-primary-foreground/10 font-bold smooth-transition"
-              >
-                Order Online
-              </Button>
+              <OrderDialog>
+                <Button
+                  size="lg"
+                  className="bg-primary-foreground/20 backdrop-blur-sm border-2 border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/30 font-bold smooth-transition"
+                >
+                  Order Online
+                </Button>
+              </OrderDialog>
             </div>
           </div>
         </div>
