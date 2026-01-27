@@ -128,20 +128,24 @@ const ContactSection = () => {
               
               {/* Address */}
               <div className="p-8">
-                <div className="flex gap-5 mb-6">
-                  <div className="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center flex-shrink-0">
+                <a 
+                  href="#" 
+                  onClick={(e) => { e.preventDefault(); window.open(GOOGLE_MAPS_URL, "_blank"); }}
+                  className="flex gap-5 mb-6 group cursor-pointer"
+                >
+                  <div className="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 smooth-transition">
                     <MapPin className="w-7 h-7 text-primary" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-foreground text-lg mb-3">Our Location</h4>
-                    <address className="not-italic text-muted-foreground leading-relaxed">
+                    <h4 className="font-bold text-foreground text-lg mb-3 group-hover:text-primary smooth-transition">Our Location</h4>
+                    <address className="not-italic text-muted-foreground leading-relaxed group-hover:text-foreground smooth-transition">
                       GF-4, Dhanvantari Complex<br />
                       Near Sardar Patel Statue, Dairy Den Circle<br />
                       Opposite M.S. University, Sarod<br />
                       Sayajiganj, Vadodara – 390007
                     </address>
                   </div>
-                </div>
+                </a>
                 <Button
                   variant="outline"
                   size="lg"
